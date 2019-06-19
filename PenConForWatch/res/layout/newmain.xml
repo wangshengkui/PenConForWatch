@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 系统调试区 开始 -->
+
+    <LinearLayout
+        android:id="@+id/information"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:orientation="horizontal" >
+
+        <!-- 系统调试区的，当前笔&amp;棒动态调试段 -->
+
+        <LinearLayout
+            android:id="@+id/dynamic_debug_area"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dynamic_debug_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="当前笔&amp;棒动态调试段"
+                android:textSize="23sp" />
+
+            <RelativeLayout
+                android:id="@+id/dynamic_debug_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/dynamic_debug_body_title"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/body_color"
+                    android:gravity="center"
+                    android:text="系统调试区"
+                    android:textColor="#ffffffff"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/maintextview"
+                    android:layout_width="270dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/dynamic_debug_body_title"
+                    android:background="@color/body_color"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="@string/hello_world"
+                    android:textColor="#ffffffff"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_alignBottom="@id/maintextview"
+                    android:layout_alignLeft="@id/maintextview"
+                    android:layout_toRightOf="@id/dynamic_debug_body_title"
+                    android:background="#ffffffff"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="当前导学笔状态"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pen_status"
+                        android:layout_width="265dp"
+                        android:layout_height="68dp"
+                        android:layout_marginLeft="3dp"
+                        android:background="#ff000000"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="vertical"
+                        android:singleLine="false"
+                        android:text="当前导学笔状态"
+                        android:textColor="#ffffffff" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/group_dynamic_debug_area"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/group_dynamic_debug_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="小组笔&amp;棒调试信息"
+                android:textSize="23sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/groupinfor"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/group_people1"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="17dp"
+                    android:background="#00ff00ff"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="1号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people2"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00ffff00"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="2号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people3"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00ff0000"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="3号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people4"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#00ff0000"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="4号"
+                    android:textSize="23sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--
+            <ImageView
+                android:id="@+id/grouptextview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/groupinfor" />
+        -->
+
+        <LinearLayout
+            android:id="@+id/backstage_dynamic_debug_area"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/backstage_dynamic_debug_title"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:text="后台相关信息段"
+                android:textSize="23sp" />
+
+            <ImageView
+                android:id="@+id/backstage_gestureinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/body_color" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 系统调试区 结束 ！ 用户区 ，开始 -->
+
+    <RelativeLayout
+        android:id="@+id/pencage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/information"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/pencage_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/hear"
+            android:layout_width="82dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="58dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/login_button_selector"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/end_ask"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="578dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/login_button_selector"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="setmode"
+            android:padding="0dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="75dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="710dp"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/login_button_selector"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="setmode"
+            android:padding="0dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/san_smartpen"
+            android:layout_width="20dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/login_button_selector"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/mic"
+            android:layout_width="24dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/login_button_selector"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/do_work"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="368dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/redpoint"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="setmode"
+            android:padding="0dp"
+            android:text=""
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/correcting"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="400dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/redpoint"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="setmode"
+            android:padding="0dp"
+            android:text=""
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/revision"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginLeft="431dp"
+            android:layout_marginTop="48dp"
+            android:background="@drawable/redpoint"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="setmode"
+            android:padding="0dp"
+            android:text=""
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/close"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="0dp"
+            android:background="@color/set_mode_btn"
+            android:onClick="setmode"
+            android:text="关闭"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/unfold"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/close"
+            android:layout_marginTop="0dp"
+            android:background="@color/set_mode_btn"
+            android:onClick="setmode"
+            android:text="展开"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/fold"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/unfold"
+            android:background="@color/set_mode_btn"
+            android:text="折叠"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/print"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="0dp"
+            android:background="@color/set_mode_btn"
+            android:text="印刷"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/electric_paper"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/print"
+            android:layout_marginTop="0dp"
+            android:background="@color/set_mode_btn"
+            android:text="电纸"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/watch"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/electric_paper"
+            android:background="@color/set_mode_btn"
+            android:text="腕表"
+            android:textSize="15sp" />
+    </RelativeLayout>
+    <!-- 用户区 结束，书写版面区 开始 -->
+
+    <LinearLayout
+        android:id="@+id/pen_chirography_all"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:layout_below="@id/pencage"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/pen_chirography_title"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@color/body_color"
+            android:gravity="center"
+            android:text="书写版面区"
+            android:textColor="#ffffffff"
+            android:textSize="23sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:background="@color/body_color"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="700dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#ffffffff"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/pageinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="版物类型:教辅  幅面：A4 书写日期：2019年4月3日 初始时段：10:00-12:00"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/page_layer" />
+
+                <LinearLayout
+                    android:id="@+id/pen_chirography"
+                    android:layout_width="397dp"
+                    android:layout_height="561dp"
+                    android:layout_marginLeft="160dp"
+                    android:orientation="vertical" >
+                </LinearLayout>
+                <!--
+                     android:background="@drawable/pagebg" 
+                                    android:layout_width="397dp"
+                    android:layout_height="561dp"
+                -->
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/historyscrollbar" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- 书写版面区 结束 -->
+
+    <Button
+        android:id="@+id/refresh"
+        android:layout_width="150dp"
+        android:layout_height="500dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="650dp"
+        android:background="#11ffFF00"
+        android:onClick="setmode"
+        android:text=""
+        android:textSize="15sp" />
+    <!-- 最小显示版面区开始 -->
+
+    <RelativeLayout
+        android:id="@+id/minishow"
+        android:layout_width="200dp"
+        android:layout_height="240dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/pencage"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/leftarrow"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/leftarrow"
+            android:onClick="setmode" />
+        <!-- 自我书写状态开始 -->
+
+        <RelativeLayout
+            android:id="@+id/selfwrite"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/leftarrow"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/selfwrite" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="自我书写状态"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <!-- 自我书写状态结束， 语文开始 -->
+
+        <RelativeLayout
+            android:id="@+id/verbal"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/leftarrow"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/verbal" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="语文" />
+        </RelativeLayout>
+        <!-- 语文结束   数学开始 -->
+
+        <RelativeLayout
+            android:id="@+id/math"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/leftarrow"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/math" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="数学" />
+        </RelativeLayout>
+        <!-- 数学结束   英语开始 -->
+
+        <RelativeLayout
+            android:id="@+id/english"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/leftarrow"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/english" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="英语" />
+        </RelativeLayout>
+        <!-- 英语结束   群组开始开始 -->
+
+        <RelativeLayout
+            android:id="@+id/groupvalue"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/leftarrow"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/groupvalue" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="群组" />
+        </RelativeLayout>
+        <!-- 群组结束 -->
+
+        <ImageView
+            android:id="@+id/rightarrow"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rightarrow"
+            android:onClick="setmode" />
+    </RelativeLayout>
+    <!-- 最小显示版面区结束 -->
+
+</RelativeLayout>

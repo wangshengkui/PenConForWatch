@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="#ff000000"
+    android:padding="0dp" >
+
+    <!-- 系统调试区 开始   android:layout_marginTop="-250dp" -->
+
+    <RelativeLayout
+        android:id="@+id/information"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="0dp"
+        android:padding="0dp" >
+
+        <!-- 系统调试区的，当前笔&amp;棒动态调试段 -->
+
+        <LinearLayout
+            android:id="@+id/dynamic_debug_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <RelativeLayout
+                android:id="@+id/dynamic_debug_body"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/dynamic_debug_body_title"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/body_color"
+                    android:gravity="center"
+                    android:onClick="setmode"
+                    android:text="系统调试区"
+                    android:textColor="#ffffffff"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/maintextview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/dynamic_debug_body_title"
+                    android:background="@color/body_color"
+                    android:lineSpacingMultiplier="1.2"
+                    android:onClick="setmode"
+                    android:text="@string/hello_world"
+                    android:textColor="#ffffffff"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_alignBottom="@id/maintextview"
+                    android:layout_alignLeft="@id/maintextview"
+                    android:layout_toRightOf="@id/dynamic_debug_body_title"
+                    android:background="#ffffffff"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:gravity="center"
+                        android:text="当前导学笔状态"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/pen_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="68dp"
+                        android:layout_marginLeft="3dp"
+                        android:background="#ff000000"
+                        android:scrollbarAlwaysDrawVerticalTrack="true"
+                        android:scrollbars="vertical"
+                        android:singleLine="false"
+                        android:text="当前导学笔状态"
+                        android:textColor="#ffffffff" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- 小组区开始 -->
+
+        <LinearLayout
+            android:id="@+id/group_dynamic_debug_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/groupinfor"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/group_people1"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_weight="1"
+                    android:background="#00ff00ff"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="1号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people2"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="#00ffff00"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="2号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people3"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="#00ff0000"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="3号"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/group_people4"
+                    android:layout_width="210dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="#00ff0000"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="changetoslef"
+                    android:text="4号"
+                    android:textSize="23sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 后台调试区 -->
+
+        <LinearLayout
+            android:id="@+id/backstage_dynamic_debug_area"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+            <TextView
+                android:id="@+id/backstage_gestureinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/body_color" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/updatehomeworkinfo"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#20ff0000"
+            android:onClick="setmode"
+            android:text="" />
+
+        <Button
+            android:id="@+id/scanforsmartpen"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="#2000ff00"
+            android:onClick="setmode"
+            android:text="" />
+
+        <Button
+            android:id="@+id/changeview"
+            android:layout_width="90dp"
+            android:layout_height="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@id/scanforsmartpen"
+            android:layout_toRightOf="@id/updatehomeworkinfo"
+            android:background="#200000ff"
+            android:onClick="setmode"
+            android:text="" />
+    </RelativeLayout>
+    <!-- 系统调试区 结束 ！ 用户区 ，开始 -->
+
+</RelativeLayout>

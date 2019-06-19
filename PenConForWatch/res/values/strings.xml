@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string name="app_name">PenCon</string>
+    <string name="action_settings">扫描智能笔</string>
+    <string name="hello_world">原始的布局文件</string>
+    <string name="unknown_device">Unknown device</string>
+    <string name="scan_no_ble_bluetooth">扫描平板设备</string> 
+    <string name="dissolve_group">解散小组</string>
+    <string name="change_uer_name">我的名字</string>
+    <!--  DeviceListActivity -->
+    <string name="scanning">scanning for devices...</string>
+    <string name="select_device">select a device to connect</string>
+    <string name="none_paired">No devices have been paired</string>
+    <string name="none_found">No devices found</string>
+    <string name="title_paired_devices">Paired Devices</string>
+    <string name="title_other_devices">Other Available Devices</string>
+    <string name="button_scan">Scan for devices</string> 
+    <!--  BluetoothChat -->
+    <string name="send">Send</string>
+    <string name="not_connected">You are not connected to a device</string>
+    <string name="bt_not_enabled_leaving">Bluetooth was not enabled. Leaving Bluetooth Chat.</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected to</string>
+    <string name="title_not_connected">not connected</string>
+    
+    <string name="set_gesture_name">set gesture name:</string>
+    <string name="save_gesture">手势训练</string>
+    <string name="recognize_gesture">识别手势</string>
+    <string name="openpencageactivity">检查批改作业</string>
+    
+    <string name="default_file_name">My Recording</string>
+    <drawable name="clr_normal">#00000000</drawable>
+    <drawable name="clr_pressed">#ffa44100</drawable>
+    <string name="read_from_file">读取笔迹</string> 
+    <string name="save_chirography">保存提交</string>
+    <string name="clean">clean</string>
+     <string name="exitwatch">退出腕表模式</string>   
+       
+    
+     
+</resources>

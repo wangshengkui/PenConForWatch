@@ -1,0 +1,55 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/clean"
+        android:orderInCategory="100"
+        android:title="@string/clean"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="101"
+        android:showAsAction="never"
+        android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/exitwatch"
+        android:orderInCategory="102"
+        android:title="@string/exitwatch"/>
+    <item
+        android:id="@+id/scan_bluetooth"
+        android:orderInCategory="103"
+        android:showAsAction="never"
+        android:title="@string/scan_no_ble_bluetooth"/>
+    <item
+        android:id="@+id/dissolve_group"
+        android:orderInCategory="104"
+        android:showAsAction="never"
+        android:title="@string/dissolve_group"/>
+    <item
+        android:id="@+id/change_uer_name"
+        android:orderInCategory="105"
+        android:showAsAction="never"
+        android:title="@string/change_uer_name"/>
+    <item
+        android:id="@+id/save_gesture"
+        android:orderInCategory="106"
+        android:showAsAction="never"
+        android:title="@string/save_gesture"/>
+    <item
+        android:id="@+id/recognize_gesture"
+        android:orderInCategory="107"
+        android:showAsAction="never"
+        android:title="@string/recognize_gesture"/>
+    <item
+        android:id="@+id/read_from_file"
+        android:orderInCategory="108"
+        android:title="@string/read_from_file"/>
+    <item
+        android:id="@+id/save_chirography"
+        android:orderInCategory="109"
+        android:title="@string/save_chirography"/>
+    <item
+        android:id="@+id/openpencageactivity"
+        android:orderInCategory="110"
+        android:showAsAction="never"
+        android:title="@string/openpencageactivity"/>
+
+</menu>
