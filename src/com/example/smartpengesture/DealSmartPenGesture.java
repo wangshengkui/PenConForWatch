@@ -335,23 +335,45 @@ Log.e("zgm", "gestureName:"+gestureName);
 					/**
 					 * 双击页眉保存并上传代码
 					 */
-					SmartPenUnitils.save(activity.smartPenPage);
+					//wsk 2019.6.20
+					//上传一次书写的所有文件
+					for(int i =0;i<activity.smartPenPageNameContainer.size();i++)
+					{
+						SmartPenUnitils.save(activity.smartPenPageContainer.get(i));
+					}
+					//SmartPenUnitils.save(activity.smartPenPage);
 //					showSound(R.raw.in);
 
 					new Thread(new Runnable() {				
 						@Override
 						public void run() {
 							// TODO Auto-generated method stub
-						boolean statsu=	UpLoad.uploadFile("http://118.24.109.3/Public/smartpen/upload.php","/sdcard/-1/"
-									+ "NONE-"+activity.studentNumber+"-"+activity.gCurBookID+"-"+activity.gCurPageID+"-0.page");	
+							//wsk 2019.6.20
+							//上传一次书写的所有文件
+							boolean statsu = false;
+							for(int i =0;i<activity.smartPenPageNameContainer.size();i++)
+							{
+								statsu=	UpLoad.uploadFile("http://118.24.109.3/Public/smartpen/upload.php","/sdcard/-1/"
+										+activity.smartPenPageNameContainer.get(i));
+								if(!statsu)
+								{
+									activity.showSound(R.raw.upload_fail);	
+									return;
+								}
+							}
+							
+//						boolean statsu=	UpLoad.uploadFile("http://118.24.109.3/Public/smartpen/upload.php","/sdcard/-1/"
+//									+ "NONE-"+activity.studentNumber+"-"+activity.gCurBookID+"-"+activity.gCurPageID+"-0.page");	
 						if (statsu) {
-							activity.showSound(R.raw.upload_sucess);					
+							activity.showSound(R.raw.upload_sucess);
+							activity.smartPenPageNameContainer.clear();
+							activity.smartPenPageContainer.clear();
 //							Toast.makeText(getBaseContext(), "上传成功", Toast.LENGTH_SHORT).show();
 						}
-						else {
-							activity.showSound(R.raw.upload_fail);	
-//							Toast.makeText(getBaseContext(), "上传失败", Toast.LENGTH_SHORT).show();
-						}
+//						else {
+//							activity.showSound(R.raw.upload_fail);	
+////							Toast.makeText(getBaseContext(), "上传失败", Toast.LENGTH_SHORT).show();
+//						}
 						}
 					}).start();
 

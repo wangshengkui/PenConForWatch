@@ -344,8 +344,8 @@ public class MainActivity extends FragmentActivity {
 	// wsk 2019.5.7
 	boolean RadioIsPlaying = false;
 
-	private ArrayList<SmartPenPage> smartPenPageContainer=new ArrayList<SmartPenPage>();
-	private ArrayList<String> smartPenPageNameContainer=new ArrayList<String>();
+	public ArrayList<SmartPenPage> smartPenPageContainer=new ArrayList<SmartPenPage>();
+	public ArrayList<String> smartPenPageNameContainer=new ArrayList<String>();
 	WifiUtil wifiUtil = null;
 	// The Handler that gets information back from the BluetoothChatService
 	Handler mHandler = new Handler() {
