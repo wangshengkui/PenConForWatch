@@ -1477,7 +1477,14 @@ static Document doc;
 static String pagexml;
 public int HomeworkContnet(int index,int BookID,int PageID)
 {
-	pagexml = "book_"+BookID+"_page_"+(PageID%20)+".xml";
+	switch (BookID) {
+	  case 0:pagexml = "book_" + BookID + "_page_" + (PageID % 20) + ".xml";
+	   break;
+	  case 1:pagexml = "book_" + BookID + "_page_" + (PageID % 8) + ".xml";
+	  break;
+	  default:
+	   break;
+	  }
 	
 	File file = new File("/sdcard/xml/" +pagexml);
 	try 
